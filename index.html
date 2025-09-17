@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tiffin Express — Home-cooked meals delivered</title>
+  <meta name="description" content="Tiffin Express delivers warm, nutritious, home-cooked meals to students, professionals and anyone who wants healthier daily food." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#ff6b35;
+      --accent-2:#ff8a4d;
+      --muted:#6b7280;
+      --card:#ffffff;
+      --bg:#faf8f6;
+      --glass: rgba(255,255,255,0.6);
+      --radius:16px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color-scheme: light;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#fff 0%, #fbfbfb 100%);background-color:var(--bg);}
+    a{color:var(--accent);text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:54px;height:54px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:20px}
+    nav{display:flex;gap:18px;align-items:center}
+    .cta{background:var(--accent);color:white;padding:10px 16px;border-radius:10px;font-weight:600}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:28px}
+    .hero h1{font-size:34px;margin:0 0 12px}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .actions{display:flex;gap:12px}
+    .search-card{background:var(--card);border-radius:14px;padding:12px;box-shadow:0 6px 20px rgba(16,24,40,0.06);display:flex;gap:8px;align-items:center}
+    .search-card input{border:0;outline:0;font-size:15px}
+
+    .hero-visual{background:linear-gradient(180deg,#fff7f2, #fff );border-radius:18px;padding:18px;box-shadow:0 10px 30px rgba(16,24,40,0.06)}
+    .meal-preview{display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:center}
+    .meal-preview img{width:120px;height:120px;border-radius:12px;object-fit:cover}
+
+    /* Features */
+    .features{display:flex;gap:16px;margin:34px 0}
+    .feature{background:var(--card);padding:16px;border-radius:12px;flex:1;box-shadow:0 6px 20px rgba(16,24,40,0.04)}
+
+    /* Menu grid */
+    .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:14px}
+    .menu-card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 8px 30px rgba(16,24,40,0.04);display:flex;flex-direction:column;gap:10px}
+    .menu-card img{width:100%;height:140px;object-fit:cover;border-radius:10px}
+    .price{font-weight:700}
+
+    /* How it works */
+    .steps{display:flex;gap:14px}
+    .step{flex:1;background:linear-gradient(180deg,#fff,#fff);padding:18px;border-radius:12px;text-align:center}
+
+    /* Testimonials */
+    .testimonials{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .testimonial{background:var(--card);padding:16px;border-radius:12px}
+
+    /* Footer */
+    footer{margin-top:36px;padding:24px 0;color:var(--muted);font-size:14px;text-align:center}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .menu-grid{grid-template-columns:repeat(2,1fr)}
+      .testimonials{grid-template-columns:1fr}
+    }
+    @media (max-width:560px){
+      .menu-grid{grid-template-columns:1fr}
+      header{padding:12px 0}
+      .logo{width:46px;height:46px}
+      .hero h1{font-size:26px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">TE</div>
+        <div>
+          <div style="font-weight:700">Tiffin Express</div>
+          <div style="font-size:13px;color:var(--muted)">Home-cooked meals — delivered daily</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#menu">Menu</a>
+        <a href="#plans">Plans</a>
+        <a href="#how">How it works</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" href="#subscribe">Get Started</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>Warm, nutritious home-cooked meals — delivered to your door</h1>
+        <p>Designed for students, busy professionals, and anyone looking for healthier everyday food. Choose a weekly plan, or order à la carte — all meals prepared with real ingredients and real care.</p>
+
+        <div class="actions">
+          <div class="search-card" style="flex:1">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="opacity:.8"><path d="M21 21l-4.35-4.35" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="11" cy="11" r="6" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></circle></svg>
+            <input id="zip" placeholder="Enter your area or pincode (e.g. 560001)" />
+            <button onclick="checkArea()" class="cta">Check Service</button>
+          </div>
+          <a href="#menu" class="cta" style="background:transparent;border:1px solid var(--accent);color:var(--accent);">View Menu</a>
+        </div>
+
+        <div class="features" aria-hidden>
+          <div class="feature">
+            <strong>Balanced Nutrition</strong>
+            <div style="color:var(--muted);margin-top:8px;font-size:14px">Menus crafted by nutrition-conscious cooks — portioned for energy and wellbeing.</div>
+          </div>
+          <div class="feature">
+            <strong>Daily Fresh</strong>
+            <div style="color:var(--muted);margin-top:8px;font-size:14px">Meals cooked daily — no preservatives, only real home-style freshness.</div>
+          </div>
+          <div class="feature">
+            <strong>Flexible Plans</strong>
+            <div style="color:var(--muted);margin-top:8px;font-size:14px">Weekly subscriptions, single-day orders, and student-friendly prices.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="hero-visual" aria-hidden>
+        <div class="meal-preview">
+          <img src="https://images.unsplash.com/photo-1604908177522-9b5e9f0b0d3b?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcdef" alt="home cooked meal" />
+          <div>
+            <div style="font-weight:700">Today’s Highlight</div>
+            <div style="color:var(--muted);margin-top:8px">Grilled spiced chicken, lemon rice, seasonal greens, and carrot-ginger raita.</div>
+            <div style="margin-top:12px;display:flex;gap:8px">
+              <div style="background:#fff;padding:8px;border-radius:10px;box-shadow:0 6px 18px rgba(16,24,40,0.05)">Cal: 520</div>
+              <div style="background:#fff;padding:8px;border-radius:10px;box-shadow:0 6px 18px rgba(16,24,40,0.05)">Protein: 32g</div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:14px;font-size:13px;color:var(--muted)">Signed-in users see today's full menu and subscription status here.</div>
+      </aside>
+    </section>
+
+    <!-- Menu -->
+    <section id="menu">
+      <h2 style="margin-top:26px">Weekly Menu</h2>
+      <p style="color:var(--muted);margin-top:6px">A rotating selection of homestyle dishes — mix and match or pick a meal plan.</p>
+
+      <div class="menu-grid" role="list">
+        <article class="menu-card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1604908177522-9b5e9f0b0d3b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=img1" alt="Lunch bowl" />
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-weight:700">Paneer Tikka Bowl</div>
+              <div style="color:var(--muted);font-size:13px">Whole grains, marinated paneer, roasted veg.</div>
+            </div>
+            <div class="price">₹149</div>
+          </div>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button onclick="addToCart('Paneer Tikka Bowl',149)" style="flex:1;padding:8px;border-radius:10px;border:1px solid #eee">Add</button>
+            <button onclick="orderNow('Paneer Tikka Bowl')" class="cta">Order</button>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <img src="https://images.unsplash.com/photo-1543353071-087092ec3932?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=img2" alt="Meal" />
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-weight:700">Lentil & Veg Thali</div>
+              <div style="color:var(--muted);font-size:13px">Daily dal, sabzi, rice, salad.</div>
+            </div>
+            <div class="price">₹129</div>
+          </div>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button onclick="addToCart('Lentil & Veg Thali',129)" style="flex:1;padding:8px;border-radius:10px;border:1px solid #eee">Add</button>
+            <button onclick="orderNow('Lentil & Veg Thali')" class="cta">Order</button>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=img3" alt="Meal" />
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-weight:700">Masala Fish with Quinoa</div>
+              <div style="color:var(--muted);font-size:13px">High protein, light spices.</div>
+            </div>
+            <div class="price">₹189</div>
+          </div>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button onclick="addToCart('Masala Fish with Quinoa',189)" style="flex:1;padding:8px;border-radius:10px;border:1px solid #eee">Add</button>
+            <button onclick="orderNow('Masala Fish with Quinoa')" class="cta">Order</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Plans -->
+    <section id="plans">
+      <h2 style="margin-top:28px">Subscription Plans</h2>
+      <p style="color:var(--muted);margin-top:6px">Skip days anytime. Pause or cancel. Student discounts available.</p>
+
+      <div style="display:flex;gap:14px;margin-top:12px">
+        <div style="flex:1;background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(16,24,40,0.04)">
+          <div style="font-weight:700">Weekly Plan</div>
+          <div style="color:var(--muted);margin-top:8px">5 meals / week • Delivery included</div>
+          <div style="font-weight:800;font-size:20px;margin-top:12px">₹699 / week</div>
+          <div style="margin-top:12px"><button class="cta" onclick="subscribe('Weekly')">Subscribe</button></div>
+        </div>
+        <div style="flex:1;background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(16,24,40,0.04)">
+          <div style="font-weight:700">Daily Plan</div>
+          <div style="color:var(--muted);margin-top:8px">14 meals / week • Best value</div>
+          <div style="font-weight:800;font-size:20px;margin-top:12px">₹1,699 / week</div>
+          <div style="margin-top:12px"><button class="cta" onclick="subscribe('Daily')">Subscribe</button></div>
+        </div>
+        <div style="flex:1;background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(16,24,40,0.04)">
+          <div style="font-weight:700">À la carte</div>
+          <div style="color:var(--muted);margin-top:8px">Order individual meals, no commitment.</div>
+          <div style="font-weight:800;font-size:20px;margin-top:12px">From ₹99 / meal</div>
+          <div style="margin-top:12px"><button onclick="location.href='#menu'" style="padding:10px 14px;border-radius:10px;border:1px solid #eee">Order</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how">
+      <h2 style="margin-top:28px">How it works</h2>
+      <div class="steps" style="margin-top:12px">
+        <div class="step">
+          <div style="font-weight:700">1. Choose</div>
+          <div style="color:var(--muted);margin-top:8px">Pick a plan or single meals from our rotating menu.</div>
+        </div>
+        <div class="step">
+          <div style="font-weight:700">2. Cook</div>
+          <div style="color:var(--muted);margin-top:8px">Local kitchens prepare meals fresh each morning.</div>
+        </div>
+        <div class="step">
+          <div style="font-weight:700">3. Deliver</div>
+          <div style="color:var(--muted);margin-top:8px">Contactless delivery to your dorm, office or home — warm and ready.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="social" style="margin-top:28px">
+      <h2>What customers say</h2>
+      <div class="testimonials" style="margin-top:12px">
+        <blockquote class="testimonial">"Finally — meals that feel like home. Love the portion sizes and the variety."<div style="margin-top:8px;font-weight:700">— Ananya, student</div></blockquote>
+        <blockquote class="testimonial">"Quick delivery, honest flavours and the daily plans made my workweeks so much easier."<div style="margin-top:8px;font-weight:700">— Rohit, software engineer</div></blockquote>
+      </div>
+    </section>
+
+    <!-- Contact / Subscribe -->
+    <section id="contact" style="margin-top:28px">
+      <h2>Contact & Subscribe</h2>
+      <div style="display:flex;gap:12px;margin-top:12px;align-items:flex-start">
+        <form id="contactForm" style="flex:1;background:var(--card);padding:16px;border-radius:12px;box-shadow:0 10px 30px rgba(16,24,40,0.05)" onsubmit="submitForm(event)">
+          <label style="display:block;margin-bottom:8px">Name <input id="name" required style="width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid #eee" /></label>
+          <label style="display:block;margin-bottom:8px">Email <input id="email" type="email" required style="width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid #eee" /></label>
+          <label style="display:block;margin-bottom:8px">Message <textarea id="message" rows="3" style="width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid #eee"></textarea></label>
+          <div style="display:flex;gap:10px;align-items:center">
+            <button class="cta" type="submit">Send Message</button>
+            <div id="formStatus" style="color:var(--muted);font-size:13px"></div>
+          </div>
+        </form>
+
+        <aside style="width:320px;background:linear-gradient(180deg,#fff,#fff);padding:16px;border-radius:12px;box-shadow:0 10px 30px rgba(16,24,40,0.04)">
+          <div style="font-weight:700">Get updates</div>
+          <div style="color:var(--muted);font-size:13px;margin-top:8px">Subscribe for menus, student discounts and launch offers.</div>
+          <div style="margin-top:12px;display:flex;gap:8px">
+            <input id="subscribeEmail" placeholder="you@mail.com" style="flex:1;padding:10px;border-radius:8px;border:1px solid #eee" />
+            <button class="cta" onclick="subscribeInline()">Subscribe</button>
+          </div>
+
+          <div style="margin-top:14px;color:var(--muted);font-size:13px">Or email us at <a href="mailto:hello@tiffinexpress.example">hello@tiffinexpress.example</a></div>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Tiffin Express • Made with care • Privacy · Terms</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').innerText = new Date().getFullYear();
+
+    function checkArea(){
+      const zip = document.getElementById('zip').value.trim();
+      if(!zip){alert('Please enter an area or pincode.');return}
+      // placeholder logic: pretend we serve 5600xx areas
+      if(/^56/.test(zip)) alert('Good news — we currently serve your area! Sign up to get started.');
+      else alert('We are expanding — enter your email in the Subscribe box and we will notify you when we launch in your area.');
+    }
+
+    function addToCart(name,price){
+      alert(name + ' added to your cart — (demo).');
+    }
+    function orderNow(name){
+      alert('Redirecting to checkout for ' + name + ' (demo).');
+    }
+    function subscribe(plan){
+      alert('Thanks — redirecting to subscribe flow for: ' + plan + ' (demo).');
+    }
+
+    function submitForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      document.getElementById('formStatus').innerText = 'Sending...';
+      // demo behaviour — replace with real API
+      setTimeout(()=>{
+        document.getElementById('formStatus').innerText = 'Message sent — we will reply to ' + email;
+        document.getElementById('contactForm').reset();
+      },800);
+    }
+
+    function subscribeInline(){
+      const em = document.getElementById('subscribeEmail').value.trim();
+      if(!em) return alert('Enter your email to subscribe.');
+      alert('Thanks — ' + em + ' has been added to our list (demo).');
+      document.getElementById('subscribeEmail').value = '';
+    }
+  </script>
+</body>
+</html>
